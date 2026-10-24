@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: student-management-system
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /health.php
+    envVars:
+      - key: DB_HOST
+        sync: false
+      - key: DB_PORT
+        sync: false
+      - key: DB_NAME
+        value: student_db
+      - key: DB_USER
+        sync: false
+      - key: DB_PASS
+        sync: false
+      - key: DB_SSL_CA
+        sync: false
+      - key: ALLOW_ROLE_SELECTION_ON_SIGNUP
+        value: "false"
