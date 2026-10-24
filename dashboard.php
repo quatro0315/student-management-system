@@ -1,12 +1,12 @@
 <?php
 require_once 'config.php';
-require_once 'includes/auth_check.php';
+require_once __DIR__ . '/includes/auth_check.php';
 
 $pageTitle = 'Dashboard';
 
 // Only Admin sees student/user statistics. Everyone else gets a simple page with their allowed links.
 if (!isAdmin()) {
-    require_once 'includes/header.php';
+    require_once __DIR__ . '/includes/header.php';
     $flash = $_SESSION['flash'] ?? null;
     unset($_SESSION['flash']);
     ?>
@@ -22,7 +22,7 @@ if (!isAdmin()) {
       <?php endforeach; ?>
     </div>
     <?php
-    require_once 'includes/footer.php';
+    require_once __DIR__ . '/includes/footer.php';
     exit;
 }
 
@@ -50,7 +50,7 @@ $recent = $pdo->query("
     LIMIT 5
 ")->fetchAll();
 
-require_once 'includes/header.php';
+require_once __DIR__ . '/includes/header.php';
 ?>
 
 <div class="cards-grid">
@@ -130,4 +130,4 @@ require_once 'includes/header.php';
   </div>
 </div>
 
-<?php require_once 'includes/footer.php'; ?>
+<?php require_once __DIR__ . '/includes/footer.php'; ?>

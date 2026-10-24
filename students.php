@@ -1,6 +1,6 @@
 <?php
 require_once 'config.php';
-require_once 'includes/auth_check.php';
+require_once __DIR__ . '/includes/auth_check.php';
 
 $pageTitle = 'Students';
 
@@ -34,7 +34,7 @@ $stmt = $pdo->prepare($sql);
 $stmt->execute($params);
 $students = $stmt->fetchAll();
 
-require_once 'includes/header.php';
+require_once __DIR__ . '/includes/header.php';
 ?>
 
 <?php if ($flash): ?>
@@ -94,4 +94,4 @@ require_once 'includes/header.php';
   </table>
 </div>
 
-<?php require_once 'includes/footer.php'; ?>
+<?php require_once __DIR__ . '/includes/footer.php'; ?>

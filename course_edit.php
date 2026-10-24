@@ -1,6 +1,6 @@
 <?php
 require_once 'config.php';
-require_once 'includes/auth_check.php';
+require_once __DIR__ . '/includes/auth_check.php';
 
 $pageTitle = 'Edit Course';
 $errors = [];
@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-require_once 'includes/header.php';
+require_once __DIR__ . '/includes/header.php';
 ?>
 
 <div class="page-head">
@@ -71,4 +71,4 @@ require_once 'includes/header.php';
   </div>
 </div>
 
-<?php require_once 'includes/footer.php'; ?>
+<?php require_once __DIR__ . '/includes/footer.php'; ?>

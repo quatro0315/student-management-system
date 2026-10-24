@@ -1,6 +1,6 @@
 <?php
 require_once 'config.php';
-require_once 'includes/user_photo.php';
+require_once __DIR__ . '/includes/user_photo.php';
 
 // Already signed in? No need to register.
 if (isset($_SESSION['user_id'])) {
@@ -94,7 +94,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sign Up - Student Management System</title>
-<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body class="login-body">
   <div class="login-card">

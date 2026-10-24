@@ -1,6 +1,6 @@
 <?php
 require_once 'config.php';
-require_once 'includes/auth_check.php';
+require_once __DIR__ . '/includes/auth_check.php';
 
 $pageTitle = 'Add Student';
 $errors = [];
@@ -69,7 +69,7 @@ $yearlevels  = $pdo->query("SELECT ID, YEARLEVEL FROM tbl_yearlevel ORDER BY ID"
 $sections    = $pdo->query("SELECT ID, SECTION FROM tbl_section ORDER BY SECTION")->fetchAll();
 $schoolyears = $pdo->query("SELECT ID, SCHOOLYEAR FROM tbl_schoolyear ORDER BY SCHOOLYEAR")->fetchAll();
 
-require_once 'includes/header.php';
+require_once __DIR__ . '/includes/header.php';
 ?>
 
 <div class="panel form-panel">
@@ -80,7 +80,7 @@ require_once 'includes/header.php';
   <?php endif; ?>
 
   <form method="POST" action="student_add.php" class="stacked-form">
-    <?php include 'includes/student_form_fields.php'; ?>
+    <?php include __DIR__ . '/includes/student_form_fields.php'; ?>
     <div class="form-actions">
       <button type="submit" class="btn btn-primary">Save Student</button>
       <a href="students.php" class="btn btn-link">Cancel</a>
@@ -88,4 +88,4 @@ require_once 'includes/header.php';
   </form>
 </div>
 
-<?php require_once 'includes/footer.php'; ?>
+<?php require_once __DIR__ . '/includes/footer.php'; ?>

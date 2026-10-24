@@ -1,6 +1,6 @@
 <?php
 require_once 'config.php';
-require_once 'includes/auth_check.php';
+require_once __DIR__ . '/includes/auth_check.php';
 
 $pageTitle = 'Subjects';
 $errors = [];
@@ -74,7 +74,7 @@ $courseOptions     = $pdo->query("SELECT DESCRIPTION FROM tbl_course ORDER BY DE
 $yearlevelOptions  = $pdo->query("SELECT DESCRIPTION FROM tbl_yearlevel ORDER BY ID")->fetchAll(PDO::FETCH_COLUMN);
 $termOptions       = $pdo->query("SELECT DESCRIPTION FROM tbl_term ORDER BY ID")->fetchAll(PDO::FETCH_COLUMN);
 
-require_once 'includes/header.php';
+require_once __DIR__ . '/includes/header.php';
 ?>
 
 <div class="page-head">
@@ -226,4 +226,4 @@ require_once 'includes/header.php';
 
 </div>
 
-<?php require_once 'includes/footer.php'; ?>
+<?php require_once __DIR__ . '/includes/footer.php'; ?>

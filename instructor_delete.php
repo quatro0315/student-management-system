@@ -1,7 +1,7 @@
 <?php
 require_once 'config.php';
-require_once 'includes/auth_check.php';
-require_once 'includes/instructor_upload.php';
+require_once __DIR__ . '/includes/auth_check.php';
+require_once __DIR__ . '/includes/instructor_upload.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $id = (int)($_POST['id'] ?? 0);

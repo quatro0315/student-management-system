@@ -1,6 +1,6 @@
 <?php
 require_once 'config.php';
-require_once 'includes/auth_check.php';
+require_once __DIR__ . '/includes/auth_check.php';
 blockIfReadOnly('subjects.php');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

@@ -1,7 +1,7 @@
 <?php
 require_once 'config.php';
-require_once 'includes/auth_check.php';
-require_once 'includes/instructor_upload.php';
+require_once __DIR__ . '/includes/auth_check.php';
+require_once __DIR__ . '/includes/instructor_upload.php';
 
 $pageTitle = 'Instructor';
 $errors = [];
@@ -46,7 +46,7 @@ $stmt->execute($params);
 $rows = $stmt->fetchAll();
 $total = $pdo->query("SELECT COUNT(*) c FROM tbl_instructors")->fetch()['c'];
 
-require_once 'includes/header.php';
+require_once __DIR__ . '/includes/header.php';
 ?>
 
 <div class="page-head">
@@ -147,4 +147,4 @@ require_once 'includes/header.php';
 
 </div>
 
-<?php require_once 'includes/footer.php'; ?>
+<?php require_once __DIR__ . '/includes/footer.php'; ?>
